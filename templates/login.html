@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+{%with messages = get_flashed_messages() %}
+        {%if messages%}
+                {%for msg in messages%}
+                    <p style="text-align:center;">{{msg}}</p>
+                {%endfor%}
+        {%endif%}
+{%endwith%}
+    <h2 style="text-align:center">Login</h2>
+
+
+<form method="post" style="display: block;
+  margin-left: auto;
+  margin-right: auto;width:40%;text-align:center; ">
+        <input type="text" name="username" class="form-control mb-3 mt-3" placeholder="Username">
+        <input type="password" name="password" class="form-control" placeholder="Password">
+        <button  type="submit" class="btn btn-success mt-3">Login</button>
+    </form>
+
+{% endblock %}
